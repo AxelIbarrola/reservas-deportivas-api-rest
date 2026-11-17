@@ -1,0 +1,24 @@
+info:
+  name: Administracion Crear producto
+  type: http
+http:
+  method: POST
+  url: http://localhost:8086/productos
+  headers:
+    - name: Authorization
+      value: Bearer {{adminJwt}}
+  body:
+    type: json
+    data: |-
+      {
+        "nombre": "Teclado mecanico",
+        "descripcion": "Teclado de demostracion",
+        "precio": 15000.00,
+        "stock": 8
+      }
+  auth: inherit
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

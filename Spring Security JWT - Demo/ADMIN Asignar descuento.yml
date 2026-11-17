@@ -1,0 +1,23 @@
+info:
+  name: ADMIN Asignar descuento
+  type: http
+http:
+  method: PUT
+  url: http://localhost:8086/clientes/1/descuento
+  headers:
+    - name: Authorization
+      value: Bearer {{adminJwt}}
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "tipoDescuento": "CLIENTE_PREFERENCIAL"
+      }
+  auth: inherit
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
